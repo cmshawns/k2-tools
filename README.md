@@ -1,7 +1,7 @@
 Shawn's work tools
 ==================
 
-### `K2.cmd` - Runs the HostServer from the commandline. ESC to stop, any key to (re)start.
+### `K2.cmd` - Runs the HostServer from the commandline. `ESC` to stop, then `Y` to restart or `N` to exit session.
 
 _TODO_
 
