@@ -1,6 +1,6 @@
 @echo off
 :start
-"%ProgramFiles(x86)%\K2 blackpearl\Host Server\Bin\K2HostServer.exe"
+"%ProgramFiles%\K2\Host Server\Bin\K2HostServer.exe"
 echo.
 choice /C yn /M "Restart server? "
 echo.

@@ -1,23 +1,24 @@
-@echo off
-
-set K2FOLDER=%ProgramFiles%\K2
+REM @echo off
 
 echo Switching service to manual...
 
 :: Stop K2 Service and set to Manual start
-sc stop "K2 Server"
-sc config "K2 Server" start= Demand
+set K2SERVER=K2 Server
+
+sc stop "%K2SERVER%"
+sc config "%K2SERVER%" start= Demand
 
 echo Creating shortcut for SmartObject Service Tester...
 
 :: Add SmartObject Tester shortcut to taskbar
 ::		Taken from http://superuser.com/a/455383
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
+set K2DIR=%ProgramFiles%\K2
 
 echo Set oWS = WScript.CreateObject("WScript.Shell") > %SCRIPT%
 echo sLinkFile = "%APPDATA%\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\SmartObject Service Tester.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "%K2FOLDER%\Bin\SmartObject Service Tester.exe" >> %SCRIPT%
+echo oLink.TargetPath = "%K2DIR%\Bin\SmartObject Service Tester.exe" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 
 cscript /nologo %SCRIPT%
@@ -28,7 +29,7 @@ echo Creating favorite in Explorer for K2 blackpearl folder...
 echo Set oWS = WScript.CreateObject("WScript.Shell") > %SCRIPT%
 echo sLinkFile = "%USERPROFILE%\Links\K2 blackpearl.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "%K2FOLDER%" >> %SCRIPT%
+echo oLink.TargetPath = "%K2DIR%" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 
 cscript /nologo %SCRIPT%
