@@ -26,13 +26,13 @@ k2fi [/c] <package folder>
 Create a setup configuration file, then perform the install using that file:
 
 ```
-k2fi /c "K2 5"
+k2fi /c "K2 (5.1001.1000.0)"
 ```
 
 Perform an unattended install using a previously-generated setup configuration:
 
 ```
-k2fi "K2 5"
+k2fi "K2 (5.1001.1000.0)"
 ```
 
 `k2fi` will look for the configuration file the same folder that contains the `<package folder>`. The file name
