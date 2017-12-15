@@ -13,7 +13,7 @@ k2
 
 _TODO_
 
-### `k2fi.cmd` - K2 Fast Installer
+### `k2fi.cmd` - K2 Fast Installer - MAY NOT WORK
 
 **Usage:**
 
